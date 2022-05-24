@@ -1,9 +1,10 @@
 // import {loadingReducer} from './loadingReducer'
-import {combineReducers, compose, createStore} from "redux";
-import {counterReducer} from "./counter-reducer";
+import {applyMiddleware, combineReducers, compose, createStore} from "redux";
+import {movieReducer} from "./movie-reducer";
+import thunk from "redux-thunk";
 
 const reducers = combineReducers({
-    counterReducer: counterReducer,
+    movie: movieReducer,
 
 })
 //Для DEVTools  Redux
@@ -15,7 +16,8 @@ declare global {
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 //
 
-const store = createStore(reducers, composeEnhancers())
+
+const store = createStore(reducers, applyMiddleware(thunk))
 
 export default store
 

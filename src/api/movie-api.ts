@@ -10,15 +10,15 @@ export type SearchType = {
 
 const instanse = axios.create({
     baseURL: 'http://www.omdbapi.com',
-    withCredentials: true,
+    // withCredentials: true,
 })
 const key = '/?apikey=995f97b1';
 
 
 export const movieApi = {
-    getTodoLists(title: string) {
+    getMovie(title: string) {
         const query = `${key}&s=${title}`;
-        return instanse.get<Array<SearchType>>(query)
+        return instanse.get<ResponseType>(query)
     },
 }
 
