@@ -1,12 +1,5 @@
 import axios from "axios";
 
-export type SearchType = {
-    Title: string,
-    Year: string,
-    imdbID: string,
-    Type: string,
-    Poster: string
-}
 
 const instanse = axios.create({
     baseURL: 'http://www.omdbapi.com',
