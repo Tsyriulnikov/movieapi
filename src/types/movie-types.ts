@@ -9,7 +9,7 @@ export type StateType={
 }
 
 export type ResponseType = {
-    search: Array<SearchType>
+    Search: Array<SearchType>
     totalResults: string,
     response: string
 }
