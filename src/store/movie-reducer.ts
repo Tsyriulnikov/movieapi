@@ -5,11 +5,12 @@ import {MovieActionType} from "../actions/actions";
 
 
 const initState: StateType = {
-    response:{
+    data:{
         search:[],
         totalResults: '',
         response: '',
     },
+
     searchValue: '',
     loading: false,
     activePage: 1,
@@ -21,9 +22,13 @@ const initState: StateType = {
 export const movieReducer = (state: StateType = initState, action: MovieActionType): StateType => {
     switch (action.type) {
         case 'SET-SEARCH-RESPONSE': {
-            return {...state,response:action.payload.data}
-        }
+            return {...state, data:{...state.data, data.search:action.payload.data}}
+        };
 
+        case 'SET-SEARCH-MOVIES-ERROR': {
+
+            return {...state}
+        }
         default:
             return {...state}
     }

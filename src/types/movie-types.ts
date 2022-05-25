@@ -1,6 +1,6 @@
 
 export type StateType={
-    response:ResponseType,
+    data:ResponseType,
     searchValue: string,
     loading: boolean,
     activePage: number,

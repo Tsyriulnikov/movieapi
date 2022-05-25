@@ -1,38 +1,23 @@
 import React from 'react';
 import './App.css';
-import {movieApi} from "./api/movie-api";
-import {useDispatch} from "react-redux";
-import {setTodosThunk} from "./store/movie-reducer";
+import {useDispatch, useSelector} from "react-redux";
+import { searchMoviesThunk} from "./thunk/thunk";
+import {AppStoreType} from "./store/store";
+import {SearchType, StateType} from "./types/movie-types";
 
 function App() {
 const dispatch=useDispatch()
+const response=useSelector<AppStoreType,any>(state => state.movie.search)
 
-//   const searchFilm = async () => {
-//     try {
-//       const {data} = await movieApi.getMovie('war');
-//       // const {Search, Error, Response} = data;
-//     //   if (Response === 'True') {
-//     //     setSerachResult(JSON.stringify(Search));
-//     //   } else {
-//     //     setSerachResult(Error);
-//     //   }
-//     dispatch(setSearchResponse(data))
-//      } catch (e) {
-//       console.log(e);
-//      }
-//
-// };
-
-const searchFilm = ()=>{
-setTodosThunk()
+const searchFilms = ()=>{
+        dispatch(searchMoviesThunk('war') as any )
 }
-
+// console.log(JSON.stringify(response))
 
   return (
     <div className="App">
 
-      <button onClick={searchFilm}>Search</button>
-
+      <button onClick={searchFilms}>Search</button>
 
     </div>
   );
