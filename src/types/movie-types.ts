@@ -11,7 +11,7 @@ export type StateType={
 export type ResponseType = {
     Search: Array<SearchType>
     totalResults: string,
-    response: string
+    Response: string
 }
 
 export type SearchType = {

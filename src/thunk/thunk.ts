@@ -7,7 +7,7 @@ export const searchMoviesThunk = (searchValue: string) => (dispatch: Dispatch) =
     movieApi.getMovie(searchValue)
         .then((res) => {
 
-            dispatch(setSearchResponse(res.data));
+            dispatch(setSearchResponse(res.data as ResponseType));
             console.log(res.data)
             // dispatch({type: SET_TOTAL_PAGES, totalPages: Math.ceil(data.totalResults / 10)});
         })

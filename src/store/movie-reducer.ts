@@ -1,6 +1,7 @@
 
-import {SearchType, StateType} from "../types/movie-types";
+import {SearchType, StateType,ResponseType} from "../types/movie-types";
 import {MovieActionType} from "../actions/actions";
+import {Search} from "@mui/icons-material";
 
 
 
@@ -8,7 +9,7 @@ const initState: StateType = {
     data:{
         Search:[],
         totalResults: '',
-        response: '',
+        Response: '',
     },
 
     searchValue: '',
@@ -22,10 +23,11 @@ const initState: StateType = {
 export const movieReducer = (state: StateType = initState, action: MovieActionType): StateType => {
     switch (action.type) {
         case 'SET-SEARCH-RESPONSE': {
-            let post:Array<SearchType> = action.payload.post
-            let totalResults:string = action.payload.totalResults
-            let respons:string = action.payload.response
-            return {...state, data:{...state.data,Search:post, totalResults:totalResults, response:respons}}
+            let {Search, totalResults, respons}:ResponseType = action.payload.data
+            // let post:Array<SearchType> = action.payload.post
+            // let totalResults:string = action.payload.totalResults
+            // let respons:string = action.payload.response
+            return {...state, data:action.payload.data}
         };
 
         case 'SET-SEARCH-MOVIES-ERROR': {
