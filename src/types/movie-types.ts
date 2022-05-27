@@ -9,15 +9,15 @@ export type StateType={
 }
 
 export type ResponseType = {
-    search: Array<SearchType>
+    Search: Array<SearchType>
     totalResults: string,
-    response: string
+    Response: string
 }
 
 export type SearchType = {
-    title: string,
-    year: string,
+    Title: string,
+    Year: string,
     imdbID: string,
-    type: string,
-    poster: string
+    Type: string,
+    Poster: string
 }

@@ -3,11 +3,11 @@ import './App.css';
 import {useDispatch, useSelector} from "react-redux";
 import { searchMoviesThunk} from "./thunk/thunk";
 import {AppStoreType} from "./store/store";
-import {SearchType, StateType} from "./types/movie-types";
+import {ResponseType} from "./types/movie-types";
 
 function App() {
 const dispatch=useDispatch()
-let response=useSelector<AppStoreType,any>(state => state.movie.data.data)
+let response=useSelector<AppStoreType,ResponseType>(state => state.movie.data)
 
 const searchFilms = ()=>{
         dispatch(searchMoviesThunk('war') as any )
