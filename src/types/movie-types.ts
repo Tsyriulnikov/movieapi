@@ -8,16 +8,16 @@ export type StateType={
     error:null|string,
 }
 
-export type ResponseType<D = {}> = {
-    data: D
+export type ResponseType = {
+    search: Array<SearchType>
     totalResults: string,
-    Response: string
+    response: string
 }
 
 export type SearchType = {
-    Title: string,
-    Year: string,
+    title: string,
+    year: string,
     imdbID: string,
-    Type: string,
-    Poster: string
+    type: string,
+    poster: string
 }

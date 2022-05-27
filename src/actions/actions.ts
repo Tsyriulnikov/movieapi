@@ -1,16 +1,14 @@
-import {SearchType} from "../types/movie-types";
+import {ResponseType} from "../types/movie-types";
 
 export type MovieActionType = SetSearchResponseActionType|SetSearchMoviesErrorActionType
 
 
 type SetSearchResponseActionType = ReturnType<typeof setSearchResponse>
-export const setSearchResponse = ({Search,  totalResults, Response}: any) => {
+export const setSearchResponse = (data:ResponseType) => {
     return {
         type: "SET-SEARCH-RESPONSE",
         payload: {
-            post: Search,
-            totalResults: totalResults,
-            response: Response,
+            ...data
         },
     } as const
 }

@@ -7,7 +7,7 @@ import {SearchType, StateType} from "./types/movie-types";
 
 function App() {
 const dispatch=useDispatch()
-let response=useSelector<AppStoreType,Array<SearchType>>(state => state.movie.data.Search)
+let response=useSelector<AppStoreType,any>(state => state.movie.data.data)
 
 const searchFilms = ()=>{
         dispatch(searchMoviesThunk('war') as any )
