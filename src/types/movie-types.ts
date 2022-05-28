@@ -8,8 +8,9 @@ export type StateType={
     error:null|string,
 }
 
-export type ResponseType = {
-    Search: Array<SearchType>
+export type ResponseType<D = Array<SearchType>> = {
+    // Search: Array<SearchType>
+    Search: D
     totalResults: string,
     Response: string
 }
