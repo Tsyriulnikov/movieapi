@@ -11,8 +11,8 @@ const key = '/?apikey=995f97b1';
 
 export const movieApi = {
     getMovie(title: string) {
-        // const query = `${key}&s=${title}`;
-        // return instanse.get<ResponseType<Array<SearchType>>>(query)
+        const query = `${key}&s=${title}`;
+        return instanse.get<ResponseType<Array<SearchType>>>(query)
     },
 }
 
